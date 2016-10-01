@@ -23,6 +23,13 @@ matrix:
           packages: ['g++-5']
       env: MYCC=gcc-5 MYCXX=g++-5
 
+    - compiler: gcc
+      addons:
+        apt:
+          sources: ['ubuntu-toolchain-r-test']
+          packages: ['g++-5', 'g++-5-multilib', 'g++-multilib']
+      env: MYCC=gcc-5 MYCXX=g++-5 CFLAGS=-m32 CXXFLAGS=-m32
+
     # XXX: g++-5 installs something that makes clang work...
     - compiler: clang
       addons:
