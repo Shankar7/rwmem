@@ -27,7 +27,7 @@ matrix:
       addons:
         apt:
           sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-5', 'g++-5-multilib', 'g++-multilib']
+          packages: ['g++-5', 'g++-5-multilib', 'g++-multilib', 'libpython3-dev:i386']
       env: MYCC=gcc-5 MYCXX=g++-5 CFLAGS=-m32 CXXFLAGS=-m32
 
     # XXX: g++-5 installs something that makes clang work...
