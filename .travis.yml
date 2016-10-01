@@ -27,7 +27,7 @@ matrix:
       addons:
         apt:
           sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-5-multilib', 'g++-multilib', 'libpython3.2:i386']
+          packages: ['g++-5-multilib', 'g++-multilib', 'libpython3.2-dev:i386']
       env: MYCC=gcc-5 MYCXX=g++-5 CFLAGS=-m32 CXXFLAGS=-m32
 
     # XXX: g++-5 installs something that makes clang work...
@@ -37,6 +37,14 @@ matrix:
 #          sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-precise-3.8']
 #          packages: ['clang-3.8', 'g++-5']
 #      env: MYCC=clang-3.8 MYCXX=clang++-3.8
+
+install:
+  - echo KALA
+  - sudo apt-get -qq update
+  - sudo dpkg --add-architecture i386
+  - sudo apt-get -qq update
+
+
 
 # Build steps
 script:
