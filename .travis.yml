@@ -9,34 +9,34 @@ language: cpp
 
 matrix:
   include:
-    - compiler: gcc
-      addons:
-        apt:
-          sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-4.9']
-      env: MYCC=gcc-4.9 MYCXX=g++-4.9
+#    - compiler: gcc
+#      addons:
+#        apt:
+#          sources: ['ubuntu-toolchain-r-test']
+#          packages: ['g++-4.9']
+#      env: MYCC=gcc-4.9 MYCXX=g++-4.9
+#
+#    - compiler: gcc
+#      addons:
+#        apt:
+#          sources: ['ubuntu-toolchain-r-test']
+#          packages: ['g++-5']
+#      env: MYCC=gcc-5 MYCXX=g++-5
 
     - compiler: gcc
       addons:
         apt:
           sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-5']
-      env: MYCC=gcc-5 MYCXX=g++-5
-
-    - compiler: gcc
-      addons:
-        apt:
-          sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-5', 'g++-5-multilib', 'g++-multilib', 'libpython3-dev:i386']
+          packages: ['g++-5-multilib', 'g++-multilib', 'libpython3.2:i386']
       env: MYCC=gcc-5 MYCXX=g++-5 CFLAGS=-m32 CXXFLAGS=-m32
 
     # XXX: g++-5 installs something that makes clang work...
-    - compiler: clang
-      addons:
-        apt:
-          sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-precise-3.8']
-          packages: ['clang-3.8', 'g++-5']
-      env: MYCC=clang-3.8 MYCXX=clang++-3.8
+#    - compiler: clang
+#      addons:
+#        apt:
+#          sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-precise-3.8']
+#          packages: ['clang-3.8', 'g++-5']
+#      env: MYCC=clang-3.8 MYCXX=clang++-3.8
 
 # Build steps
 script:
